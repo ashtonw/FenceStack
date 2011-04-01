@@ -4,7 +4,6 @@
   <artifactId>FenceStack-plugin</artifactId>
   <version>1.13</version>
   <name>FenceStack</name>
-  <url>http://www.bukkit.org</url>
   <build>
       <plugins>
           <plugin>
