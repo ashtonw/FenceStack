@@ -1,6 +1,7 @@
 package com.recanu.fencestack;
 
 import org.bukkit.Material;
+import org.bukkit.block.BlockFace;
 import org.bukkit.event.block.BlockCanBuildEvent;
 import org.bukkit.event.block.BlockListener;
 
@@ -22,6 +23,7 @@ public class tBlockListener extends BlockListener
 				//FenceStack.log.info("FENCESTACK: SET TO BUILDABLE");
 			}
 		}
+		//FenceStack.log.info("FENCESTACK : " + event.getBlock().getFace(BlockFace.DOWN).getType());
 
 	}
 	
