@@ -14,28 +14,28 @@ public class FenceStack extends JavaPlugin
 	public void onDisable() 
 	{
 		pluginDesc = getDescription();
-		log.info(Misc.brackets(pluginDesc.getName()) + " version "
-				+ Misc.brackets(pluginDesc.getVersion()) + " unloaded.");
+		log.info(pluginDesc.getName() + " version "
+				+ pluginDesc.getVersion() + " unloaded.");
 	}
 
 	public void onEnable() 
 	{
 		registerEvents();
 		pluginDesc = getDescription();
-		log.info(Misc.brackets(pluginDesc.getName()) + " version "
-				+ Misc.brackets(pluginDesc.getVersion()) + " loaded.");
+		log.info(pluginDesc.getName() + " version "
+				+ pluginDesc.getVersion() + " loaded.");
 		
 	}
 	
 	public void log(String s)
 	{
-		log.info(Misc.brackets(pluginDesc.getName()) + ":" + s);
+		log.info(pluginDesc.getName() + ":" + s);
 	}
 	
 	private void registerEvents()
 	{
-		getServer().getPluginManager().registerEvent(org.bukkit.event.block.BlockEvent.Type.BLOCK_CANBUILD , blockListener,
-				Event.Priority.Normal, this);			
+		getServer().getPluginManager().registerEvent(Event.Type.BLOCK_CANBUILD, blockListener,
+				Event.Priority.Normal, this);
 	}
 
 }
