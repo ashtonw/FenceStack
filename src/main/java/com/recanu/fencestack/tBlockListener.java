@@ -1,7 +1,6 @@
 package com.recanu.fencestack;
 
 import org.bukkit.Material;
-import org.bukkit.block.BlockFace;
 import org.bukkit.event.block.BlockCanBuildEvent;
 import org.bukkit.event.block.BlockListener;
 
