@@ -36,6 +36,10 @@ public class FenceStack extends JavaPlugin
 	{
 		getServer().getPluginManager().registerEvent(Event.Type.BLOCK_CANBUILD, blockListener,
 				Event.Priority.Normal, this);
+		getServer().getPluginManager().registerEvent(Event.Type.BLOCK_PLACE, blockListener,
+				Event.Priority.Normal, this);
+		getServer().getPluginManager().registerEvent(Event.Type.BLOCK_PHYSICS, blockListener,
+				Event.Priority.Normal, this);
 	}
 
 }
