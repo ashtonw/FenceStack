@@ -2,6 +2,7 @@ package com.recanu.fencestack;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.BlockFace;
 import org.bukkit.event.block.BlockCanBuildEvent;
 import org.bukkit.event.block.BlockListener;
 import org.bukkit.event.block.BlockPhysicsEvent;
@@ -12,15 +13,25 @@ public class tBlockListener extends BlockListener
 	@Override
 	public void onBlockPhysics(BlockPhysicsEvent event) {
 		// TODO Auto-generated method stub
-		if (event.getBlock().getType() == Material.TORCH) {
-			FenceStack.log.info("FenceStack : Torch PHYSICS");
+		if (canReplace(event.getBlock().getType())) {
+			FenceStack.log.info("FenceStack :PHYSICS " + event.getBlock().getType().toString());
+			
+			event.setCancelled(true);
+			if ( event.getBlock().getRelative(BlockFace.UP).getType() == Material.TORCH ) {
+				FenceStack.log.info("FenceStack :UP ");
+				event.getBlock().getRelative(BlockFace.UP).setType(Material.TORCH);
+			}
+			
+			
+			
+				
 		}
 	}
 
 	@Override
 	public void onBlockPlace(BlockPlaceEvent event) {
 		// TODO Auto-generated method stub
-		if (event.getBlock().getType() == Material.TORCH) {
+		if (canReplace(event.getBlock().getType())) {
 			FenceStack.log.info("FenceStack : " + event.getBlock().getType().toString());
 		
 			//event.getBlockPlaced().setData((byte) 5);
